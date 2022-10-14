@@ -10,21 +10,28 @@
 </head>
 
 <body>
+
+    <!-- nav bar -->
     <header>
-        <h1 class="header-title">Brews & Cruise</h1>
+        <h1 class="pgtitle">Brews & Cruise</h1>
         <nav class="navbar">
             <ul>
                 <li class="navbarlinks"><a href="">About</a></li>
                 <li class="navbarlinks"><a href="">Breweries</a></li>
-                <li class="navbarlinks"><a href="">Uber</a></li>
                 <li class="navbarlinks"><a href="">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section></section>
+        <!-- brewery finder section -->
+        <section>
+            <h2 class="findtitle">Find a Brewery:</h2>
+            <input type="text" id="userInput" placeholder="City">
+            <div><button class="search-button" id="cityName" onclick="GetInfo()">Search</button></div>
+        </section>
 
+        <!-- footer -->
         <footer></footer>
     </main>
 
