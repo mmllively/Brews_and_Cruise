@@ -37,6 +37,32 @@ var brewLon = BreweryData[0].longitude;
  for (let index = 0; index <BreweryData.length; index++) {
   breweryNames.push(BreweryData[index].name);
  }
+
+ for (let index = 0; index <BreweryData.length; index++) {
+  breweryNames.push(BreweryData[index].brewery_type);
+ }
+
+ for (let index = 0; index <BreweryData.length; index++) {
+  breweryNames.push(BreweryData[index].phone);
+ }
+
+ for (let index = 0; index <BreweryData.length; index++) {
+  breweryNames.push(BreweryData[index].website_url);
+ }
+
+ for (let index = 0; index <BreweryData.length; index++) {
+  breweryNames.push(BreweryData[index].address);
+ }
+
+ for (let index = 0; index <BreweryData.length; index++) {
+  breweryNames.push(BreweryData[index].latitude);
+ }
+
+ for (let index = 0; index <BreweryData.length; index++) {
+  breweryNames.push(BreweryData[index].longitude);
+ }
+
+
 console.log(breweryNames);
 };
 //appending divs as children or hardcode divs 
