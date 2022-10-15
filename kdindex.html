@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./kdstyle.css" />
+    <title>Brews & Cruise</title>
+</head>
+
+<body>
+
+    <!-- nav bar -->
+    <header>
+        <h1 class="pgtitle">Brews & Cruise</h1>
+        <nav class="navbar">
+            <ul>
+                <li class="navbarlinks"><a href="">About</a></li>
+                <li class="navbarlinks"><a href="">Breweries</a></li>
+                <li class="navbarlinks"><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- brewery finder section -->
+        <section>
+            <h2 class="findbrewerytitle">Find a Brewery:</h2>
+            <div class="searchinput"><input type="text" id="userInput" placeholder="Enter City"></div>
+            <div class="searchbutton"><button class="search-button" id="cityName" onclick="GetInfo()">Search</button>
+            </div>
+        </section>
+
+        <!-- brewery info -->
+        <div id="card">
+        </div>
+
+        <!-- footer -->
+        <footer></footer>
+    </main>
+
+    <script src="./kdscript.js"></script>
+</body>
+
+</html>
