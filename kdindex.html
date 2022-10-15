@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./kdstyle.css" />
     <title>Brews & Cruise</title>
 </head>
 
@@ -26,15 +26,21 @@
     <main>
         <!-- brewery finder section -->
         <section>
-            <h2 class="findtitle">Find a Brewery:</h2>
-            <input type="text" id="userInput" placeholder="City">
-            <div><button class="search-button" id="cityName" onclick="GetInfo()">Search</button></div>
+            <h2 class="findbrewerytitle">Find a Brewery:</h2>
+            <div class="searchinput"><input type="text" id="userInput" placeholder="Enter City"></div>
+            <div class="searchbutton"><button class="search-button" id="cityName" onclick="GetInfo()">Search</button>
+            </div>
         </section>
+
+        <!-- brewery info -->
+        <div id="card">
+        </div>
 
         <!-- footer -->
         <footer></footer>
     </main>
 
+    <script src="./kdscript.js"></script>
 </body>
 
 </html>
