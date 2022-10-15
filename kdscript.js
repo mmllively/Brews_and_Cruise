@@ -11,12 +11,11 @@ function GetInfo() {
             completedata.map((values) => {
                 data1 += `<div class="card">
                 <h3 class="title">${values.name}</h3 >
-                <p class="brewerytype"><b>Brewery Type:</b> ${values.brewery_type}</p>
-                <p class="websiteurl">${values.website_url}</p>
                 <p class="address">${values.street}</p>
                 <p class="city">${values.city}, ${values.state}  ${values.postal_code}</p>
-                <p class="lat">Latitude: ${values.latitude}</p>
-                <p class="lon">Longitude: ${values.longitude}</p>
+                <p class="phone">${values.phone}</p>
+                <p class="brewerytype">Type: ${values.brewery_type}</p>
+                <p class="websiteurl">${values.website_url}</p>
                 </div > `;
             });
             document.getElementById("card").innerHTML = data1;
@@ -27,6 +26,20 @@ function GetInfo() {
         })
 }
 
+// fetch("https://maps.googleapis.com/maps/api/js?key=AIzaSyA6hnt2FKT5Jpb5MuKdVCx7iJupZd-71pg&callback=initMap")
+//     .then
+
+function initMap() {
+    //Map options
+    var options = {
+        zoom: 8,
+        center: { lat: 42.3601, lng: -71.0589 }
+    }
+    //New map
+    var map = new
+        google.maps.Map(document.getElementById("map"), options);
+}
+initMap();
 
 
 

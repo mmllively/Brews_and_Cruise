@@ -5,6 +5,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
 }
 
 header {
@@ -27,14 +28,14 @@ header {
 
 .navbar {
     font-size: 20px;
-    text-align: left;
-    padding-left: 11%;
-    padding-bottom: 10px;
+    text-align: center;
+    padding-top: 20px;
+    padding-right: 15px;
 }
 
 .navbarlinks {
     display: inline;
-    padding: 5px;
+    padding-right: 15px;
 }
 
 .navbarlinks a {
@@ -44,9 +45,21 @@ header {
 }
 
 .findbrewerytitle {
+    font-size: 30px;
+    color: gold;
+    margin-top: 15px;
+    margin-bottom: 15px;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 8px;
+}
+
+.brewerytypestitle,
+.contacttitle,
+.abouttitle {
+    color: gold;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 35px;
+    text-align: center;
 }
 
 .searchinput {
@@ -55,7 +68,8 @@ header {
 }
 
 input {
-    border: black solid 1px;
+    border: gold solid 1px;
+    text-align: center;
     border-radius: 4px;
     padding: 4px 4px;
     width: 240px;
@@ -72,7 +86,7 @@ input {
     color: black;
     background-color: gold;
     opacity: 0.8;
-    padding: 5px 105px;
+    padding: 5px 95px;
     border-radius: 4px;
     border: 1px solid black;
     align-items: center;
@@ -87,4 +101,142 @@ input {
     border-radius: 3px;
     background-color: gold;
     color: black;
+}
+
+.maptitle {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: white;
+}
+
+#map {
+    height: 300px;
+    width: 100%;
+}
+
+/* beginning of css for brewery types page */
+.typetitle {
+    color: white;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.info {
+    text-align: center;
+    margin-bottom: 25px;
+    background-color: gold;
+    padding: 10px;
+}
+
+/* end of css for brewery types page */
+
+/* beginning of css for about page */
+.aboutinfo {
+    text-align: center;
+    color: white;
+}
+
+/* end of css for about page */
+
+/* beginning of css for contact page */
+.nametitle,
+.phonetitle,
+.emailtitle,
+.subjecttitle {
+    color: white;
+    padding-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.name,
+.phone,
+.email,
+.subject {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding-top: 5px;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+}
+
+.submitbutton {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.submit-button {
+    color: black;
+    background-color: gold;
+    opacity: 0.8;
+    padding: 5px 95px;
+    border-radius: 4px;
+    border: 1px solid black;
+    align-items: center;
+}
+
+/* end of css for contact page */
+
+/* media query */
+@media (max-width: 1050px) {
+    header {
+        background-image: center;
+        height: 500px;
+    }
+
+    .pgtitle {
+        font-size: 45px;
+        text-align: center;
+        padding-left: 0%;
+        padding-right: 0%;
+        padding-top: 5px;
+    }
+
+    .navbar {
+        font-size: 20px;
+        text-align: center;
+        padding-top: 8px;
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+
+    .findbrewerytitle {
+        margin-top: 5px;
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 770px) {
+    header {
+        background-image: center;
+        height: 400px;
+    }
+
+    .pgtitle {
+        font-size: 40px;
+        text-align: center;
+        margin-left: 0px;
+        padding-top: 5px;
+    }
+
+    .navbar {
+        font-size: 17px;
+        text-align: center;
+        padding-top: 8px;
+    }
+
+    .findbrewerytitle {
+        margin-top: 0px;
+        margin-bottom: 8px;
+    }
 }
