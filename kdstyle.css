@@ -88,3 +88,12 @@ input {
     background-color: gold;
     color: black;
 }
+
+#map {
+    height: 400px;
+    width:100%;
+}
+
+.map-card {
+    display: none;
+}

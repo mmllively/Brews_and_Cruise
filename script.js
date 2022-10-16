@@ -37,6 +37,9 @@ var uberBtn = "https://login.uber.com/oauth/v2/authorize?response_type=code&clie
 
 
 
+    
+
+
     //User opens webpage and sees a welcome prompt telling users how to use the page
     //User types name of the city into the search
     //If they don't type a city name they get prompted to type a correct city

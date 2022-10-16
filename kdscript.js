@@ -1,6 +1,13 @@
+var directionsBtn = document.getElementbyId("mapBtn");
+var mapBlock = document.getElementsByClassName("map.card")
+
+var apiKey = "AIzaSyDGiu8Eq9FAzqjFuF50zMQZhzgXi6_KSzI"
+
+
 function GetInfo() {
     var newName = document.getElementById("userInput");
     var cityName = document.getElementById("cityName");
+    
 
     fetch("https://api.openbrewerydb.org/breweries?by_city=" + newName.value + "&per_page=100")
         .then((data) => {
@@ -9,15 +16,18 @@ function GetInfo() {
         .then((completedata) => {
             let data1 = "";
             completedata.map((values) => {
+                console.log(completedata);
+                if(values.latitude !== null|| values.longitude !==null){
                 data1 += `<div class="card">
                 <h3 class="title">${values.name}</h3 >
+                <p class="city">${values.phone}</p>
                 <p class="brewerytype"><b>Brewery Type:</b> ${values.brewery_type}</p>
                 <p class="websiteurl">${values.website_url}</p>
                 <p class="address">${values.street}</p>
                 <p class="city">${values.city}, ${values.state}  ${values.postal_code}</p>
-                <p class="lat">Latitude: ${values.latitude}</p>
-                <p class="lon">Longitude: ${values.longitude}</p>
+                <a href="maps.html" id="mapBtn" data-lon=${values.longitude} data-lat=${values.latitude}>Directions</a>
                 </div > `;
+            }
             });
             document.getElementById("card").innerHTML = data1;
 
@@ -25,12 +35,68 @@ function GetInfo() {
         .catch((err) => {
             console.log(err);
         })
+        document.getElementById("mapBtn").onclick = function () {
+            mapBlock.classList.remove("map-card");
+        };
 }
 
+directionsBtn.addEventListener("click", googleTime)
+function googleTime() {
+    document.getElementById("showMap").style.display = "block";
+    // document.getElementById("showMap").classList.remove('map-card');
+    // mapBtn.value;
+}
+
+//Add eventlistener to the button, to get attributes of lon and lat 
+//function initmap on another page
+
+//Google API portion
+function initMap(){
+    //Map options
+    var options = {
+      zoom: 8,
+    //  
+    center: {lat:42.3601, lng: -71.0589}
+    // query: "City+Hall%2C+New+York%2C+NY"
+    }
+    //New map
+    var map = new
+    google.maps.Map(document.getElementById("map"), options);
+  }
+initMap();
 
 
 
 
+
+
+// for (let index = 0; index < directionsBtn.length; index++) {
+//   directionsBtn[index].addEventListener("click", loadPage);
+  
+// }
+
+
+// function loadPage()
+// {
+
+//     window.location.assign("maps.html");
+
+// }
+
+
+
+
+
+// // Btn event click
+
+// var mapBtn = document.getElementById("mapBtn")
+
+// mapBtn.addEventListener("click",  googleTime(mapBtn.value));
+
+// console.log(mapBtn);
+
+
+// function googleTime(); 
 
 
 
