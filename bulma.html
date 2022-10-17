@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Distances btn two cities App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Passions+Conflict&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <link href="./bulma.css" rel="stylesheet" />
+</head>
+
+<body>
+
+        <div class="section">
+            <h1 class="header-text title">You're only one click away from your next favorite.</h1>
+
+            <div id="form-pic" class= "container is-fluid">
+
+                <div class="container is-centered">
+
+                    <label for="from"><i class="far fa-dot-circle"></i></label>
+                    <div class="column is-one-third">
+                        <input class="direct-btn input is-medium is-focused has-text-centered" type="text" id="from"
+                            placeholder="Origin">
+                    </div>
+
+
+
+                    <label for="to"><i class="fas fa-map-marker-alt"></i></label>
+                    <div class="column is-one-third">
+                        <input class="direct btn input is-medium is-focused has-text-centered" type="text" id="to"
+                            placeholder="Destination" class="form-control">
+                    </div>
+
+                </div>
+
+
+
+                <div class="column is-centered">
+                    <button class="button is-normal is-large btn" onclick="calcRoute();">Submit<i
+                            class="fas fa-map-signs"></i></button>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="section-map container-fluid">
+
+        <div class="map-area column">
+            <div id="googleMap">
+
+            </div>
+            <div id="output">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGiu8Eq9FAzqjFuF50zMQZhzgXi6_KSzI&libraries=places"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="./bulma.js"></script>
+</body>
+
+</html>
