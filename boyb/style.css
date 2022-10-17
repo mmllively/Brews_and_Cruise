@@ -22,7 +22,7 @@ header {
   font-size: 80px;
   text-align: left;
   padding-left: 10%;
-  padding-top: 80px;
+  padding-top: 110px;
   padding-bottom: 10px;
 }
 
@@ -49,8 +49,6 @@ header {
 }
 
 .dropdown {
-  /* float: center; */
-  /* position: relative; */
   overflow: hidden;
   display: inline;
 }
@@ -61,18 +59,16 @@ header {
   outline: none;
   color: white;
   font-weight: bold;
-  /* padding: 14px 16px; */
   background-color: inherit;
-  /* margin: 0; */
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  max-width: 300px;
-  left: 50%;
-  background-color: #f9f9f9;
-  /* min-width: 120px; */
+  font-size: 15px;
+  max-width: 200px;
+  left: 41.35%;
+  background-color: white;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
@@ -106,6 +102,14 @@ header {
   padding-left: 100px;
   padding-right: 100px;
   padding-bottom: 10px;
+}
+
+.contactuslink {
+  color: gold;
+}
+
+.contactuslink:hover {
+  font-weight: bold;
 }
 
 .findbrewerytitle {
@@ -150,7 +154,6 @@ input {
 .search-button {
   color: black;
   background-color: gold;
-  opacity: 0.8;
   padding: 5px 95px;
   border-radius: 4px;
   border: 1px solid black;
@@ -180,14 +183,38 @@ input {
   width: 100%;
 }
 
+.brewerytypelink {
+  color: black;
+  font-weight: bold;
+  box-shadow: inset 0 0 0 0 black;
+  color: black;
+  padding: 0 .25rem;
+  margin: 0 -.25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.brewerytypelink:hover {
+  color: gold;
+  box-shadow: inset 200px 0 0 0 black;
+}
+
 .websiteurl {
   color: black;
   font-weight: bold;
+  box-shadow: inset 0 0 0 0 black;
+  color: black;
+  padding: 0 .25rem;
+  margin: 0 -.25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
-/* add hover effects */
 .websiteurl:hover {
-  text-shadow: 3px 3px 3px black;
+  color: gold;
+  box-shadow: inset 200px 0 0 0 black;
+}
+
+.directionsbutton {
+  padding-top: 10px;
 }
 
 .mapBtn {
@@ -198,6 +225,43 @@ input {
   border: 1px solid black;
   align-items: center;
 }
+
+/* beginning of css for about page */
+.aboutinfo {
+  text-align: center;
+  color: white;
+}
+
+.maggietitle,
+.karinatitle,
+.iiatitle {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.maggieabout,
+.karinaabout,
+.iiaabout {
+  color: white;
+  text-align: center;
+  padding-bottom: 50px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.maggiepic,
+.karinapic,
+.iiapic {
+  padding-left: 43.5%;
+  width: 130px;
+  height: 150px;
+  padding-bottom: 5px;
+}
+
+/* end of css for about page */
+
 
 /* beginning of css for brewery types page */
 .typetitle {
@@ -211,17 +275,10 @@ input {
   margin-bottom: 25px;
   background-color: gold;
   padding: 10px;
+  border: 2px solid white;
 }
 
 /* end of css for brewery types page */
-
-/* beginning of css for about page */
-.aboutinfo {
-  text-align: center;
-  color: white;
-}
-
-/* end of css for about page */
 
 /* beginning of css for contact page */
 .nametitle,
@@ -262,7 +319,6 @@ textarea {
 .submit-button {
   color: black;
   background-color: gold;
-  opacity: 0.8;
   padding: 5px 95px;
   border-radius: 4px;
   border: 1px solid black;
@@ -287,11 +343,19 @@ textarea {
   }
 
   .navbar {
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
     padding-top: 8px;
     padding-left: 0%;
     padding-right: 0%;
+  }
+
+  .navbarlinks {
+    padding-right: 30px;
+  }
+
+  .dropdown .dropbtn {
+    font-size: 16px;
   }
 
   .findbrewerytitle {
@@ -314,9 +378,17 @@ textarea {
   }
 
   .navbar {
-    font-size: 17px;
+    font-size: 16px;
     text-align: center;
     padding-top: 8px;
+  }
+
+  .navbarlinks {
+    padding-right: 10px;
+  }
+
+  .dropdown .dropbtn {
+    font-size: 16px;
   }
 
   .findbrewerytitle {
