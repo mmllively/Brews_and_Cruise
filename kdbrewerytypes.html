@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://kit.fontawesome.com/7fffa9ed2f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./kdstyle.css" />
-    <title>Brews & Cruise</title>
+    <title>B.O.Y.B. | Brewery Types</title>
 </head>
 
 <body>
@@ -18,62 +18,102 @@
             <ul>
                 <li class="navbarlinks"><a href="./kdindex.html">Home</a></li>
                 <li class="navbarlinks"><a href="./kdabout.html">About</a></li>
-                <li class="navbarlinks"><a href="./kdbrewerytypes.html">Brewery Types</a></li>
+                <li class="navbarlinks">
+                    <!-- <a href="./kdbrewerytypes.html">Brewery Types</a> -->
+                    <div class="dropdown">
+                        <button class="dropbtn"><a href="kdbrewerytypes.html">Brewery Types</a>
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#micro">Micro</a>
+                            <a href="#nano">Nano</a>
+                            <a href="#regional">Regional</a>
+                            <a href="#brewpub">Brewpub</a>
+                            <a href="#large">Large</a>
+                            <a href="#planning">Planning</a>
+                            <a href="#bar">Bar</a>
+                            <a href="#contract">Contract</a>
+                            <a href="#propietor">Propietor</a>
+                            <a href="#closed">Closed</a>
+                        </div>
+                    </div>
+                </li>
                 <li class="navbarlinks"><a href="./kdcontact.html">Contact</a></li>
             </ul>
         </nav>
-        <h1 class="pgtitle">Brews & Cruise</h1>
+        <h1 class="pgtitle">Brews<br>On Your<br>Block</h1>
     </header>
 
     <main>
 
         <section>
             <h2 class="brewerytypestitle">Brewery Types</h2>
-            <h3 class="typetitle">Micro</h3>
-            <p class="info">Most craft breweries. For example, Samual Adams
-                is still considered a micro brewery.
-            </p>
 
-            <h3 class="typetitle">Nano</h3>
-            <p class="info">An extremely small brewery which typically only
-                distributes locally.
-            </p>
+            <section id="micro">
+                <h3 class="typetitle">Micro</h3>
+                <p class="info">Most craft breweries. For example, Samual Adams
+                    is still considered a micro brewery.
+                </p>
+            </section>
 
-            <h3 class="typetitle">Regional</h3>
-            <p class="info">A regional location of an expanded brewery.
-                Ex. Sierra Nevada’s Asheville, NC location.
-            </p>
+            <section id="nano">
+                <h3 class="typetitle">Nano</h3>
+                <p class="info">An extremely small brewery which typically only
+                    distributes locally.
+                </p>
+            </section>
 
-            <h3 class="typetitle">Brewpub</h3>
-            <p class="info">A beer-focused restaurant or restaurant/bar
-                with a brewery on-premise.
-            </p>
+            <section id="regional">
+                <h3 class="typetitle">Regional</h3>
+                <p class="info">A regional location of an expanded brewery.
+                    Ex. Sierra Nevada’s Asheville, NC location.
+                </p>
+            </section>
 
-            <h3 class="typetitle">Large</h3>
-            <p class="info">A very large brewery. Likely not for visitors.
-                Ex. Miller-Coors. (deprecated)
-            </p>
+            <section id=brewpub>
+                <h3 class="typetitle">Brewpub</h3>
+                <p class="info">A beer-focused restaurant or restaurant/bar
+                    with a brewery on-premise.
+                </p>
+            </section>
 
-            <h3 class="typetitle">Planning</h3>
-            <p class="info">A brewery in planning or not yet opened to
-                the public.
-            </p>
+            <section id="large">
+                <h3 class="typetitle">Large</h3>
+                <p class="info">A very large brewery. Likely not for visitors.
+                    Ex. Miller-Coors. (deprecated)
+                </p>
+            </section>
 
-            <h3 class="typetitle">Bar</h3>
-            <p class="info">A bar. No brewery equipment on premise.
-                (deprecated)
-            </p>
+            <section id="planning">
+                <h3 class="typetitle">Planning</h3>
+                <p class="info">A brewery in planning or not yet opened to
+                    the public.
+                </p>
+            </section>
 
-            <h3 class="typetitle">Contract</h3>
-            <p class="info">A brewery that uses another brewery’s equipment.</p>
+            <section id="bar">
+                <h3 class="typetitle">Bar</h3>
+                <p class="info">A bar. No brewery equipment on premise.
+                    (deprecated)
+                </p>
+            </section>
 
-            <h3 class="typetitle">Propietor</h3>
-            <p class="info">Similar to contract brewing but refers more to a
-                brewery incubator.
-            </p>
+            <section id="contract">
+                <h3 class="typetitle">Contract</h3>
+                <p class="info">A brewery that uses another brewery’s equipment.</p>
+            </section>
 
-            <h3 class="typetitle">Closed</h3>
-            <p class="info">A location which has been closed.</p>
+            <section id="propietor">
+                <h3 class="typetitle">Propietor</h3>
+                <p class="info">Similar to contract brewing but refers more to a
+                    brewery incubator.
+                </p>
+            </section>
+
+            <section id="closed">
+                <h3 class="typetitle">Closed</h3>
+                <p class="info">A location which has been closed.</p>
+            </section>
         </section>
 
         <!-- footer -->
