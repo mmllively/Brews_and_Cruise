@@ -5,8 +5,6 @@ var mapOptions = {
     mapTypeId: google.maps.MapTypeId.ROADMAP
 
 };
-// importing data
-import {} from './script';
 
 //create map
 var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
@@ -26,7 +24,7 @@ function calcRoute() {
     //create request
     var request = {
         origin: document.getElementById("from").value,
-        destination: document.getElementById("to").values.street,
+        destination: document.getElementById("to").value,
         travelMode: google.maps.TravelMode.DRIVING, //WALKING, BYCYCLING, TRANSIT
         unitSystem: google.maps.UnitSystem.IMPERIAL
     }
@@ -53,3 +51,22 @@ function calcRoute() {
     });
 
 }
+
+
+
+//create autocomplete objects for all inputs
+var options = {
+    types: ['(cities)']
+}
+
+var input1 = document.getElementById("from");
+var autocomplete1 = new google.maps.places.Autocomplete(input1, options);
+
+var input2 = document.getElementById("to");
+var autocomplete2 = new google.maps.places.Autocomplete(input2, options);
+
+
+
+
+
+

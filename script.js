@@ -1,4 +1,13 @@
-function GetInfo() {
+var chosenBreweryDetails = {
+  street:"",
+  city: "",
+  state: "",
+  postal_code:"",
+  //other details you may need
+}
+
+function GetInfo(event) {
+  // event.preventDefault();
   var newName = document.getElementById("userInput");
   var cityName = document.getElementById("cityName");
 
@@ -9,17 +18,16 @@ function GetInfo() {
       .then((completedata) => {
           let data1 = "";
           completedata.map((values) => {
-            console.log(completedata);
             if(values.latitude !== null|| values.longitude !==null){
             data1 += `<div class="card">
             <h3 class="title">  ${values.name}  <button id="favorite" onclick="saveFavorites()"
             <i class="fa-solid fa-beer-mug-empty"></i></button></h3 >
-            <p class="city">${values.phone}</p>
+            <p class="phone">${values.phone}</p>
             <p class="brewerytype"><b>Brewery Type:</b> ${values.brewery_type}</p>
             <a class="websiteurl"  href=${values.website_url} >${values.website_url}</a>
             <p class="address">${values.street}</p>
             <p class="city">${values.city}, ${values.state}  ${values.postal_code}</p>
-            <a href="map.html"  id="mapBtn" data-lon=${values.longitude} data-lat=${values.latitude}>Directions</a>
+            <button class="mapBtn" data-lon=${values.longitude} data-lat=${values.latitude}>Directions</button>
             </div > `;
         }
         });
@@ -35,15 +43,31 @@ function GetInfo() {
       })
      
 }
+
+//event delegation example when attaching to parents
+
+  $(document).on('click', '.mapBtn', function(event){
+      var address = $(this).siblings(".address").text()+ " " + $(this).siblings(".city").text()
+    
+     localStorage.setItem("chosenBrewery", address);
+     document.location.assign("map.html")
+      console.log("you clicked the a tag");
+    }
+ 
+ )
+ 
+
+
+
 //local storage for saving favorite breweries
 
-// function saveFavorites() {
-// console.log("did this work?");
-// var title = $(this).siblings(".card").val();
-// var saved = $(this).parent().attr("id");
-// localStorage.setItem(title, saved);
-// }
-
+function saveFavorites() {
+console.log("did this work?");
+var title = $(this).siblings(".card").val();
+var saved = $(this).parent().attr("id");
+localStorage.setItem(title, saved);
+}
+// localStorage.setItem("chosenBrewery", JSON.stringify(chosenBreweryDetails.value));
 
 
 
@@ -74,7 +98,7 @@ service.findPlaceFromQuery(request, function(results, status){
   }
 });
 
-
+// $(".finder").on("submit", GetInfo)
 
 
 

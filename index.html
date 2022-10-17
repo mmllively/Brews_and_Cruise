@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://kit.fontawesome.com/7fffa9ed2f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
-    
+
     <title>Brews & Cruise</title>
 </head>
 
@@ -28,41 +28,45 @@
     <main>
         <!-- brewery finder section -->
         <section>
-            <h2 class="findbrewerytitle">Find a Brewery:</h2>
-            <div class="searchinput"><input type="text" id="userInput" placeholder="Enter City"></div>
+           
+                <h2 class="findbrewerytitle">Find a Brewery:</h2>
+                <div class="searchinput"><input type="text" id="userInput" placeholder="Enter City"></div>
+
+                <div class="searchbutton">
+                    <button class="search-button" id="cityName"  onclick="GetInfo()">Search<i
+                            class="fa-solid fa-beer-mug-empty"></i></button>
+
+
+
+                </div>
             
-            <div class="searchbutton"><button class="search-button" id="cityName" onclick="GetInfo()">Search<i class="fa-solid fa-beer-mug-empty"></i></button>
-               
-                
-                
-            </div>
         </section>
 
         <!-- brewery info -->
-        <div id="card" class="title is-ancestor"> 
-            <div class="title is-4"></div>     
+        <div id="card" class="title is-ancestor">
+            <div class="title is-4"></div>
             <a href="map.html" id="mapBtn" class="hide">Map</a>
         </div>
         <h1 id="brewMap" class="hide">Search For Your Brewery!<i class="fa-solid fa-map-location-dot"></i></h1>
 
         </div>
-        
+
         <div id="map" class="hide"></div>
-        
+
 
 
 
         <footer class="footer">
-           
-          </footer>
+
+        </footer>
     </main>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6hnt2FKT5Jpb5MuKdVCx7iJupZd-71pg&map_ids=b97d8f64f7d407f6&callback=initMap"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6hnt2FKT5Jpb5MuKdVCx7iJupZd-71pg&map_ids=b97d8f64f7d407f6&callback=initMap"></script>
+
     <script src="script.js"></script>
     <script src="maps.js"></script>
 </body>
 
 
 </html>
-
-  
