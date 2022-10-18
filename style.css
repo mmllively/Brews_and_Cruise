@@ -140,4 +140,16 @@ body {
   #mode {
     color: black;
   }
-
+  .fa-regular {
+    background: none;
+    color: black;
+    font: solid;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px 5px;
+    
+  }
+  .fa-regular:hover{
+    background-color: pink;
+  }

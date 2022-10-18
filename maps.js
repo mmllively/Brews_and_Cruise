@@ -65,6 +65,22 @@ var autocomplete1 = new google.maps.places.Autocomplete(input1, options);
 var input2 = document.getElementById("to");
 var autocomplete2 = new google.maps.places.Autocomplete(input2, options);
 
+        
+        //   // This calls the API, just update the url to have your key's name.
+        //   async function fetchKey() {
+        //     const url = 'https://yorkieportunus.herokuapp.com/store/google location'
+        //     const response = await fetch(url);
+        //     const key = await response.json();
+        //     return key;
+        // }
+        // // Call this wherever you need your key.
+        // fetchKey().then((key) => {
+        //     secretKey = key.apiKey;
+        //     console.log(secretKey);
+        // });
+      
+   
+
 
 
 
