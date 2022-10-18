@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://kit.fontawesome.com/7fffa9ed2f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>B.O.Y.B. | Home</title>
+</head>
+
+<body>
+
+    <!-- nav bar -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li class="navbarlinks"><a href="./index.html">Home</a></li>
+                <li class="navbarlinks"><a href="./about.html">About</a></li>
+                <li class="navbarlinks">
+                    <div class="dropdown">
+                        <button class="dropbtn"><a href="./brewerytypes.html">Brewery Types</a>
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#micro">Micro</a>
+                            <a href="#nano">Nano</a>
+                            <a href="#regional">Regional</a>
+                            <a href="#brewpub">Brewpub</a>
+                            <a href="#large">Large</a>
+                            <a href="#planning">Planning</a>
+                            <a href="#bar">Bar</a>
+                            <a href="#contract">Contract</a>
+                            <a href="#propietor">Propietor</a>
+                            <a href="#closed">Closed</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="navbarlinks"><a href="./contact.html">Contact</a></li>
+                <li class="navbarlinks"><a href="./favorites.html">Favorites</a></li>
+
+            </ul>
+        </nav>
+        <h1 class="pgtitle">Brews<br>On Your<br>Block</h1>
+    </header>
+
+    <main>
+        <!-- brewery finder section -->
+        <section>
+            <section>
+                <h2 class="welcomehead">Welcome to Brews on your Block,<br>
+                    your favorite brewery finder!</h2>
+                <p class="welcome">
+                    We are excited to help you find your next
+                    favorite brewery wherever you are in the US.<br>
+                    <br>
+                    Whether you’re on a road trip checking out the
+                    latest craft brew or searching for your next local
+                    spot near home we are here to help.<br>
+                    <br>
+                    Don’t see something on our list? Feel free to contact
+                    us so we can update our database.
+                </p><br>
+
+                <h2 class="findbrewerytitle">Find a Brewery:</h2>
+                <div class="searchinput"><input type="text" id="userInput" placeholder="Enter City"></div>
+
+                <div class="searchbutton">
+                    <button class="search-button" id="cityName" onclick="GetInfo()">Search<i
+                            class="fa-solid fa-beer-mug-empty"></i></button>
+
+
+
+                </div>
+
+            </section>
+
+            <!-- brewery info -->
+            <div id="card">
+            </div>
+
+            <footer class="footer">
+
+            </footer>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6hnt2FKT5Jpb5MuKdVCx7iJupZd-71pg&map_ids=b97d8f64f7d407f6&callback=initMap"></script>
+
+    <script src="script.js"></script>
+    <script src="maps.js"></script>
+</body>
+
+
+</html>
