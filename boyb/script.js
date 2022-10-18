@@ -6,6 +6,8 @@ var chosenBreweryDetails = {
   //other details you may need
 }
 
+var completeData;
+
 function phoneFormat(input) {
   if (!input || isNaN(input)) return "";
   if (typeof (input) !== 'string') input = input.toString()
@@ -28,19 +30,18 @@ function GetInfo(event) {
       let data1 = "";
       completedata.map((values) => {
         var phoneNumber = phoneFormat(values.phone)
-        if (values.latitude !== null || values.longitude !== null)
-          if (values.website_url !== null) {
-            data1 += `<div class="card">
+        if (values.website_url !== null) {
+          data1 += `<div class="card">
             <h3 class="title">  ${values.name}  <button id="favorite" onclick="saveFavorites()"
             <i class="fa-solid fa-beer-mug-empty"></i></button></h3 >
             <p class="address">${values.street || ""}</p>
-            <p class="city">${values.city}, ${values.state}  ${values.postal_code}</p>
+            <p class="city">${values.city}, ${values.state},  ${values.postal_code}</p>
             <p class="phone">${phoneNumber}</p>
             <p class="brewerytype"><b>Brewery Type:</b> <a class="brewerytypelink" href="./brewerytypes.html#${values.brewery_type}">${values.brewery_type}</a></p>
             <a class="websiteurl"  href=${values.website_url} >${values.website_url}</a>
             <div class="directionsbutton"><button class="mapBtn" data-lon=${values.longitude} data-lat=${values.latitude}>Directions</button></div>
             </div > `;
-          }
+        }
       });
       document.getElementById("card").innerHTML = data1;
 
@@ -81,33 +82,33 @@ function saveFavorites() {
 
 
 
-function initMap() {
-  //Map options
+// function initMap() {
+//   //Map options
 
-  //New map
-  var map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 8,
-    center: { lat: 42.3601, lng: -71.0589 },
-    mapID: 'b97d8f64f7d407f6',
+//   //New map
+//   var map = new google.maps.Map(document.getElementById("map"), {
+//     zoom: 8,
+//     center: { lat: 42.3601, lng: -71.0589 },
+//     mapID: 'b97d8f64f7d407f6',
 
-  });
-  console.log(mapID);
+//   });
+//   console.log(mapID);
 
-};
+// };
 
 
-initMap();
+// initMap();
 
-var service = new google.maps.places.PlacesService(map);
+// var service = new google.maps.places.PlacesService(map);
 
-service.findPlaceFromQuery(request, function (results, status) {
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      createMarker(results[i]);
-    }
-    map.setCenter(results[0].geometry.location);
-  }
-});
+// service.findPlaceFromQuery(request, function (results, status) {
+//   if (status === google.maps.places.PlacesServiceStatus.OK) {
+//     for (var i = 0; i < results.length; i++) {
+//       createMarker(results[i]);
+//     }
+//     map.setCenter(results[0].geometry.location);
+//   }
+// });
 
 // $(".finder").on("submit", GetInfo)
 

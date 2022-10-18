@@ -14,23 +14,15 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 500px;
+  height: 465px;
   color: white;
-}
-
-.pgtitle {
-  font-size: 80px;
-  text-align: left;
-  padding-left: 10%;
-  padding-top: 110px;
-  padding-bottom: 10px;
 }
 
 .navbar {
   font-size: 20px;
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   /* padding-right: 25px; */
   position: fixed;
   background-color: black;
@@ -90,33 +82,59 @@ header {
   display: block;
 }
 
+/* for all others pages except main page */
+.pgtitle {
+  font-size: 60px;
+  text-align: left;
+  padding-left: 5%;
+  padding-right: 0%;
+  padding-top: 120px;
+}
+
 .welcomehead {
+  font-size: 40px;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 170px;
+  padding-bottom: 10px;
+}
+
+.welcomesubhead {
+  text-align: left;
+  font-size: 20px;
+  padding-left: 20px;
   color: gold;
-  text-align: center;
 }
 
 .welcome {
-  text-align: center;
+  text-align: left;
   color: white;
-  padding-top: 30px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-top: 10px;
+  padding-left: 20px;
+  /* padding-right: 70%; */
   padding-bottom: 10px;
+}
+
+.bottomcontact {
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  font-size: 14px;
 }
 
 .contactuslink {
   color: gold;
-}
-
-.contactuslink:hover {
   font-weight: bold;
 }
+
+.contactuslink:hover {}
 
 .findbrewerytitle {
   font-size: 30px;
   color: gold;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   text-align: center;
 }
 
@@ -130,31 +148,35 @@ header {
   text-align: center;
 }
 
-.searchinput {
-  display: flex;
-  justify-content: center;
+.p-findbrewery {
+  color: white;
+  font-size: 17px;
+  text-align: center;
+  padding-bottom: 5px;
 }
 
-input {
+.searchinput {
+  display: block;
+  margin: auto;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.citysearchinput {
   border: gold solid 1px;
   text-align: center;
   border-radius: 4px;
-  padding: 4px 4px;
+  padding: 5px;
   width: 240px;
   font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.searchbutton {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .search-button {
   color: black;
   background-color: gold;
-  padding: 5px 95px;
+  padding: 3px;
+  height: 30px;
   border-radius: 4px;
   border: 1px solid black;
   align-items: center;
@@ -168,6 +190,7 @@ input {
   border: 1px solid black;
   border-radius: 3px;
   background-color: gold;
+  border: 3px solid white;
   color: black;
 }
 

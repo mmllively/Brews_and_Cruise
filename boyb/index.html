@@ -43,47 +43,43 @@
 
             </ul>
         </nav>
-        <h1 class="pgtitle">Brews<br>On Your<br>Block</h1>
+        <!-- <h1 class="pgtitle">Brews<br>On Your<br>Block</h1> -->
+        <h2 class="welcomehead"><i>Welcome to<br>Brews on your Block!</i></h2>
+        <h3 class="welcomesubhead">Your favorite brewery finder.</h3>
+        <p class="welcome">
+            Wherever you are in the US, we are excited to<br>
+            help you find your next favorite brewery.
+            <!-- <br><br>
+            Whether you’re on a road trip checking out the<br>
+            latest craft brew, or searching for your next local<br>
+            spot near home, we are here to help. -->
+        </p>
     </header>
 
     <main>
         <!-- brewery finder section -->
         <section>
-            <section>
-                <h2 class="welcomehead">Welcome to Brews on your Block,<br>
-                    your favorite brewery finder!</h2>
-                <p class="welcome">
-                    Wherever you are in the US, we are excited to help you find your next
-                    favorite brewery.<br>
-                    <br>
-                    Whether you’re on a road trip checking out the
-                    latest craft brew, or searching for your next local
-                    spot near home, we are here to help.<br>
-                    <br>
-                    Don’t see something on our list? Feel free to <a class="contactuslink" href="./contact.html">contact
-                        us</a> so we can update our database.
-                </p><br>
+            <h2 class="findbrewerytitle">Find a Brewery:</h2>
+            <p class="p-findbrewery"><i>Enter any city in the United States.</i></p>
 
-                <h2 class="findbrewerytitle">Find a Brewery:</h2>
-                <div class="searchinput"><input type="text" id="userInput" placeholder="Enter City"></div>
-
-                <div class="searchbutton">
-                    <button class="search-button" id="cityName" onclick="GetInfo()">Search<i
-                            class="fa-solid fa-beer-mug-empty"></i></button>
-
-
-
-                </div>
-
-            </section>
-
-            <!-- brewery info -->
-            <div id="card">
+            <div class="searchinput">
+                <input class="citysearchinput" type="text" id="userInput" placeholder="Orlando">
+                <button class="search-button" id="cityName" onclick="GetInfo()">Search<i
+                        class="fa-solid fa-beer-mug-empty"></i>
+                </button>
             </div>
+        </section>
 
-            <footer class="footer">
+        <!-- brewery info -->
+        <div id="card"></div>
 
-            </footer>
+        <p class="bottomcontact">Don’t see something on our list?<br>
+            Feel free to <a class="contactuslink" href="./contact.html">contact
+                us</a> so we can update our database.
+        </p>
+
+        <footer></footer>
+
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script async defer
