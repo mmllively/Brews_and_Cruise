@@ -43,14 +43,18 @@ function GetInfo(event) {
             }
             
             data1 += `<div class="card" >
+            <div class="box">
+            <div class="content">
             <h3 class="title">  ${values.name}  <button id="favorite" value='${JSON.stringify(brewery)}' 
-            <i class="fa-regular fa-heart"></i></button></h3 >
+            <i class="fa-solid fa-heart"></i></button></h3 >
             <p class="phone">${values.phone}</p>
             <p class="brewerytype"><b>Brewery Type:</b> ${values.brewery_type}</p>
             <a class="websiteurl"  href=${values.website_url} >${values.website_url}</a>
             <p class="address">${values.street}</p>
             <p class="city">${values.city}, ${values.state},  ${values.postal_code}</p>
             <button class="mapBtn" data-lon=${values.longitude} data-lat=${values.latitude}>Directions</button>
+            </div>
+            </div>
             </div > `;
         
         });
