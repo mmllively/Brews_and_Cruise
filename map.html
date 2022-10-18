@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Passions+Conflict&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <link href="./bulma.css" rel="stylesheet" />
+    <link href="maps.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -67,7 +67,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="Scripts/jquery-3.1.1.min.js"></script>
-    <script src="./bulma.js"></script>
+    <script src="maps.js"></script>
+    <script>
+        $("#to").val(localStorage.getItem("chosenBrewery"))
+    </script>
 </body>
 
 </html>
+
+

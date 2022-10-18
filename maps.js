@@ -1,4 +1,3 @@
-
 var myLatLng = { lat: 37.0902, lng: -95.7129 };
 var mapOptions = {
     center: myLatLng,
@@ -69,65 +68,5 @@ var autocomplete2 = new google.maps.places.Autocomplete(input2, options);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// //Google API portion
-// function initMap(){
-//     //Map options
-//     var options = {
-//       zoom: 8,
-//     center: {lat:42.3601, lng: -71.0589}
-  
-//     }
-//     //New map
-//     var map = new
-//     google.maps.Map(document.getElementById("map"), options);
-//   }
-// initMap();
-
-
-
-
-// function mapInfo() {
-//     var newName = document.getElementById("userInput");
-//     var cityName = document.getElementById("cityName");
-//     fetch("https://api.openbrewerydb.org/breweries?by_city=" + newName.value + "&per_page=100")
-//         .then(function (response) {
-//             return response.json();
-//         })
-//         .then(function (data) {
-//             console.log(data)
-//             getBrewList(data);
-//         });
-// }
-// getBrewList = (BreweryData) => {
-//     var brewName = []
-//     var brewType = []
-//     var brewPhone = []
-//     var brewUrl = []
-//     var brewStreet = []
-//     var brewCity = []
-//     var brewState = []
-//     var brewPostal = []
-//     var brewLat = []
-//     var brewLon = []
 
 
