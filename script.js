@@ -23,78 +23,79 @@ function GetInfo(event) {
   var cityName = document.getElementById("cityName");
 
   fetch("https://api.openbrewerydb.org/breweries?by_city=" + newName.value + "&per_page=100")
-      .then((data) => {
-          return data.json();
-      })
-      .then((completedata) => {
-          // ADDED SECTION WITH TUTOR
-          if (completedata.length == 0) {
-            alert("Please type a City from the United States.")
-          }
-          completeData = completedata;
-          let data1 = "";
-          completedata.map((values) => {
-            var brewery = {
-              name: values.name,
-              street: values.street,
-              city: values.city,
-              state: values.state,
-              postal_code:values.postal_code,
-            }
-            
-            data1 += `<div class="card" >
+    .then((data) => {
+      return data.json();
+    })
+    .then((completedata) => {
+      // var phoneNumber = phoneFormat(values.phone)
+      // if (values.website_url !== null)
+      if (completedata.length == 0) {
+        alert("Please type a City from the United States.")
+      }
+      completeData = completedata;
+      let data1 = "";
+      completedata.map((values) => {
+        var brewery = {
+          name: values.name,
+          street: values.street,
+          city: values.city,
+          state: values.state,
+          postal_code: values.postal_code,
+        }
+        // if (values.website_url !== null)
+        data1 += `<div class="card" >
             <div class="box">
             <div class="content">
             <h3 class="title">  ${values.name}  <button id="favorite" value='${JSON.stringify(brewery)}' 
             <i class="fa-solid fa-heart"></i></button></h3 >
-            <p class="phone">${values.phone}</p>
-            <p class="brewerytype"><b>Brewery Type:</b> ${values.brewery_type}</p>
-            <a class="websiteurl"  href=${values.website_url} >${values.website_url}</a>
-            <p class="address">${values.street}</p>
+            <p class="address">${values.street || ""}</p>
             <p class="city">${values.city}, ${values.state},  ${values.postal_code}</p>
+            <p class="phone">${values.phone}</p>
+           <p class="brewerytype"><b>Brewery Type:</b> ${values.brewery_type}</p>
+            <a class="websiteurl"  href=${values.website_url} >${values.website_url}</a>
             <button class="mapBtn" data-lon=${values.longitude} data-lat=${values.latitude}>Directions</button>
             </div>
             </div>
             </div > `;
-        
-        });
-        document.getElementById("card").innerHTML = data1;
 
-          document.getElementById("card").innerHTML = data1;
-          
+      });
+      document.getElementById("card").innerHTML = data1;
+
+      document.getElementById("card").innerHTML = data1;
 
 
-      })
-      .catch((err) => {
-          console.log(err);
-      })
-     
+
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+
 }
 
 //BUTTON FOR INITIALIZING ADDRESS TO MAP
 
-  $(document).on('click', '.mapBtn', function(event){
-      var address = $(this).siblings(".address").text()+ " " + $(this).siblings(".city").text()
+$(document).on('click', '.mapBtn', function (event) {
+  var address = $(this).siblings(".address").text() + " " + $(this).siblings(".city").text()
 
-     localStorage.setItem("chosenBrewery", address);
-     document.location.assign("map.html")
-      console.log("you clicked the a tag");
-    }
- 
- )
- 
+  localStorage.setItem("chosenBrewery", address);
+  document.location.assign("map.html")
+  console.log("you clicked the a tag");
+}
 
+)
 
 
-var myFavorites = JSON.parse(localStorage.getItem("myFavorite"))  || [];
 
-$(document).on('click', '#favorite', function(event){
-  myFavorites = JSON.parse(localStorage.getItem("myFavorite"))  || []
+
+var myFavorites = JSON.parse(localStorage.getItem("myFavorite")) || [];
+
+$(document).on('click', '#favorite', function (event) {
+  myFavorites = JSON.parse(localStorage.getItem("myFavorite")) || []
   var newFavorite = JSON.parse(event.target.value);
   myFavorites.push(newFavorite)
   localStorage.setItem('myFavorite', JSON.stringify(myFavorites));
   console.log("did this work?");
-  
+
 })
 
 
