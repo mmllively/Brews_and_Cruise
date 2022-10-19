@@ -4,13 +4,13 @@ var chosenBreweryDetails = {
   state: "",
   postal_code: "",
   //other details you may need
-}
+};
 
 var completeData;
 
 function phoneFormat(input) {
   if (!input || isNaN(input)) return "";
-  if (typeof (input) !== 'string') input = input.toString()
+  if (typeof input !== "string") input = input.toString();
   if (input.length === 10) {
     return input.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
   }
@@ -22,7 +22,11 @@ function GetInfo(event) {
   var newName = document.getElementById("userInput");
   var cityName = document.getElementById("cityName");
 
-  fetch("https://api.openbrewerydb.org/breweries?by_city=" + newName.value + "&per_page=100")
+  fetch(
+    "https://api.openbrewerydb.org/breweries?by_city=" +
+      newName.value +
+      "&per_page=100"
+  )
     .then((data) => {
       return data.json();
     })
@@ -30,7 +34,7 @@ function GetInfo(event) {
       // var phoneNumber = phoneFormat(values.phone)
       // if (values.website_url !== null)
       if (completedata.length == 0) {
-        alert("Please type a City from the United States.")
+        alert("Please type a City from the United States.");
       }
       completeData = completedata;
       let data1 = "";
@@ -41,63 +45,65 @@ function GetInfo(event) {
           city: values.city,
           state: values.state,
           postal_code: values.postal_code,
-        }
-        // if (values.website_url !== null)
+          phone: phoneFormat(values.phone),
+        };
+        if (values.website_url !== null)
         data1 += `<div class="card" >
             <div class="box">
             <div class="content">
-            <h3 class="title">  ${values.name}  <button id="favorite" value='${JSON.stringify(brewery)}' 
+            <h3 class="title">  ${
+              values.name
+            }  <button id="favorite" value='${JSON.stringify(brewery)}' 
             <i class="fa-solid fa-heart"></i></button></h3 >
             <p class="address">${values.street || ""}</p>
-            <p class="city">${values.city}, ${values.state},  ${values.postal_code}</p>
-            <p class="phone">${values.phone}</p>
-           <p class="brewerytype"><b>Brewery Type:</b> ${values.brewery_type}</p>
-            <a class="websiteurl"  href=${values.website_url} >${values.website_url}</a>
-            <button class="mapBtn" data-lon=${values.longitude} data-lat=${values.latitude}>Directions</button>
+            <p class="city">${values.city}, ${values.state},  ${
+          values.postal_code
+        }</p>
+            <p class="phone">${brewery.phone}</p>
+           <p class="brewerytype"><b>Brewery Type:</b> ${
+             values.brewery_type
+           }</p>
+            <a class="websiteurl"  href=${values.website_url} >${
+          values.website_url
+        }</a>
+            <button class="mapBtn" data-lon=${values.longitude} data-lat=${
+          values.latitude
+        }>Directions</button>
             </div>
             </div>
             </div > `;
-
       });
       document.getElementById("card").innerHTML = data1;
 
       document.getElementById("card").innerHTML = data1;
-
-
-
     })
     .catch((err) => {
       console.log(err);
-    })
-
+    });
 }
 
 //BUTTON FOR INITIALIZING ADDRESS TO MAP
 
-$(document).on('click', '.mapBtn', function (event) {
-  var address = $(this).siblings(".address").text() + " " + $(this).siblings(".city").text()
-
+$(document).on("click", ".mapBtn", function (event) {
+  var address =
+    $(this).siblings(".address").text() +
+    " " +
+    $(this).siblings(".city").text();
+  console.log(address);
   localStorage.setItem("chosenBrewery", address);
-  document.location.assign("map.html")
+  document.location.assign("map.html");
   console.log("you clicked the a tag");
-}
-
-)
-
-
-
+});
 
 var myFavorites = JSON.parse(localStorage.getItem("myFavorite")) || [];
 
-$(document).on('click', '#favorite', function (event) {
-  myFavorites = JSON.parse(localStorage.getItem("myFavorite")) || []
+$(document).on("click", "#favorite", function (event) {
+  myFavorites = JSON.parse(localStorage.getItem("myFavorite")) || [];
   var newFavorite = JSON.parse(event.target.value);
-  myFavorites.push(newFavorite)
-  localStorage.setItem('myFavorite', JSON.stringify(myFavorites));
+  myFavorites.push(newFavorite);
+  localStorage.setItem("myFavorite", JSON.stringify(myFavorites));
   console.log("did this work?");
-
-})
-
+});
 
 //local storage for saving favorite breweries
 
@@ -109,45 +115,34 @@ function saveFavorites() {
 }
 // localStorage.setItem("chosenBrewery", JSON.stringify(chosenBreweryDetails.value));
 
+// function initMap() {
+//   //Map options
 
+//   //New map
+//   var map = new google.maps.Map(document.getElementById("map"), {
+//     zoom: 8,
+//     center: { lat: 42.3601, lng: -71.0589 },
+//     mapID: 'b97d8f64f7d407f6',
 
-function initMap() {
-  //Map options
+//   });
+//   console.log(mapID);
 
-  //New map
-  var map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 8,
-    center: { lat: 42.3601, lng: -71.0589 },
-    mapID: 'b97d8f64f7d407f6',
+// };
 
-  });
-  console.log(mapID);
+// initMap();
 
-};
+// var service = new google.maps.places.PlacesService(map);
 
-
-initMap();
-
-var service = new google.maps.places.PlacesService(map);
-
-service.findPlaceFromQuery(request, function (results, status) {
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      createMarker(results[i]);
-    }
-    map.setCenter(results[0].geometry.location);
-  }
-});
+// service.findPlaceFromQuery(request, function (results, status) {
+//   if (status === google.maps.places.PlacesServiceStatus.OK) {
+//     for (var i = 0; i < results.length; i++) {
+//       createMarker(results[i]);
+//     }
+//     map.setCenter(results[0].geometry.location);
+//   }
+// });
 
 // $(".finder").on("submit", GetInfo)
-
-
-
-
-
-
-
-
 
 // function GetInfo() {
 //     var newName = document.getElementById("userInput");
