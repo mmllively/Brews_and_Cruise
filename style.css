@@ -16,6 +16,7 @@ header {
   width: 100%;
   height: 465px;
   color: white;
+
 }
 
 .navbar {
@@ -88,6 +89,9 @@ header {
   padding-left: 5%;
   padding-right: 0%;
   padding-top: 120px;
+  font-family: 'Black Ops One', cursive;
+  
+  
 }
 
 .welcomehead {
@@ -95,7 +99,19 @@ header {
   text-align: left;
   padding-left: 20px;
   padding-top: 170px;
+  padding-bottom: 0px;
+  font-family: 'Black Ops One', cursive;
+  
+}
+
+.welcomehead2 {
+  font-size: 60px;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 0px;
   padding-bottom: 10px;
+  font-family: 'Black Ops One', cursive;
+  
 }
 
 .welcomesubhead {
@@ -103,6 +119,7 @@ header {
   font-size: 20px;
   padding-left: 20px;
   color: gold;
+  font-family: 'Black Ops One', cursive;
 }
 
 .welcome {
@@ -111,7 +128,9 @@ header {
   padding-top: 10px;
   padding-left: 20px;
   padding-bottom: 10px;
+  font-family: 'Black Ops One', cursive;
 }
+
 
 .bottomcontact {
   color: white;
@@ -128,9 +147,10 @@ header {
 .findbrewerytitle {
   font-size: 30px;
   color: gold;
-  margin-top: 15px;
+  margin-top: 0px;
   margin-bottom: 15px;
   text-align: center;
+  font-family: 'Black Ops One', cursive;
 }
 
 .brewerytypestitle,
@@ -141,6 +161,8 @@ header {
   margin-bottom: 15px;
   font-size: 35px;
   text-align: center;
+  font-family: 'Black Ops One', cursive;
+  
 }
 
 .p-findbrewery {
@@ -532,6 +554,7 @@ body .container #favoriteCard .box .content a:hover {
   text-align: center;
   padding-top: 30px;
   padding-bottom: 10px;
+  font-family: 'Black Ops One', cursive;
 }
 
 .maggieabout,
@@ -669,6 +692,7 @@ textarea {
     padding-left: 5%;
     padding-right: 0%;
     padding-top: 120px;
+    font-family: 'Black Ops One', cursive;
   }
 
   .navbar {
@@ -739,6 +763,7 @@ textarea {
     margin-bottom: 8px;
   }
 }
+
 
 
 .fa-solid {
